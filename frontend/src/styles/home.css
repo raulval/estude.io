@@ -94,5 +94,6 @@
   margin-right: 128px;
 }
 .main-acessar:hover {
-  background: linear-gradient(90deg, #2C7AED 2.3%, #4BC3CC 100%);
+  /* background: linear-gradient(90deg, #2C7AED 2.3%, #4BC3CC 100%); */
+  background-color: #F2AD4A;
 }
