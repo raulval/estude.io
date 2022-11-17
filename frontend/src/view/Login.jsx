@@ -12,7 +12,7 @@ function Login() {
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
   const [carregando, setCarregando] = useState(0);
-  const baseURL = "http://localhost:8080/auth/login";
+  const baseURL = `${process.env.REACT_APP_BASE_URL}/auth/login`;
 
   const dispatch = useDispatch();
   const history = useHistory();

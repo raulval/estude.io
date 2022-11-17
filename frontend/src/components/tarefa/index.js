@@ -8,7 +8,7 @@ import "./tarefa.css";
 
 var id;
 
-const baseURL = "http://localhost:8080/api/tarefas";
+const baseURL = `${process.env.REACT_APP_BASE_URL}/api/tarefas`;
 
 function Tarefa(props) {
   const [show, setShow] = useState(false);

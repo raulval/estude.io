@@ -7,7 +7,7 @@ import ModalAnotacao from "../cadastrarAnotacao";
 import "./anotacao.css";
 
 var id;
-const baseURL = "http://localhost:8080/api/anotacoes";
+const baseURL = `${process.env.REACT_APP_BASE_URL}/api/anotacoes`;
 
 function Tarefa(props) {
   const usuarioToken = useSelector((state) => state.usuarioToken);

@@ -7,7 +7,7 @@ import NavBar from "../components/navbar-dashboard";
 import Tarefa from "../components/tarefa";
 import "../styles/tarefas.css";
 
-const baseURL = "http://localhost:8080/api/tarefas";
+const baseURL = `${process.env.REACT_APP_BASE_URL}/api/tarefas`;
 
 function Tarefas() {
   const [show, setShow] = useState(false);

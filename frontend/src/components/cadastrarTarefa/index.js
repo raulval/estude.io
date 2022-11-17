@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import toast, { Toaster } from "react-hot-toast";
 import { useSelector } from "react-redux";
 
-const baseURL = "http://localhost:8080/api/tarefas";
+const baseURL = `${process.env.REACT_APP_BASE_URL}/api/tarefas`;
 
 function ModalTarefa(props) {
   const usuarioToken = useSelector((state) => state.usuarioToken);

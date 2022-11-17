@@ -13,7 +13,7 @@ function Anotacoes() {
   const handleShow = () => setShow(true);
   const usuarioToken = useSelector((state) => state.usuarioToken);
   const [anotacoes, setAnotacoes] = useState([]);
-  const baseURL = "http://localhost:8080/api/anotacoes";
+  const baseURL = `${process.env.REACT_APP_BASE_URL}/api/anotacoes`;
 
   useEffect(() => {
     const headers = {

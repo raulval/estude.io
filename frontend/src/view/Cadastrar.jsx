@@ -11,7 +11,7 @@ function Login() {
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
   const [carregando, setCarregando] = useState(0);
-  const baseURL = "http://localhost:8080/auth/cadastrar";
+  const baseURL = `${process.env.REACT_APP_BASE_URL}/auth/cadastrar`;
 
   const dispatch = useDispatch();
   const history = useHistory();

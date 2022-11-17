@@ -11,7 +11,7 @@ function ModalAnotacao(props) {
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
 
-  const baseURL = "http://localhost:8080/api/anotacoes";
+  const baseURL = `${process.env.REACT_APP_BASE_URL}/api/anotacoes`;
 
   const headers = {
     "Content-Type": "application/json; charset=UTF-8",
