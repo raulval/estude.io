@@ -117,7 +117,7 @@ function Login() {
             Não possui uma conta?{" "}
             <span className="criar__conta" style={{ color: "#2C7AED" }}>
               <b>
-                <a href="/cadastrar">Crie uma conta agora</a>
+                <a href="/cadastrar">Crie uma conta agora para acessar nossa aplicação</a>
               </b>
             </span>
           </span>
