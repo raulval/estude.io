@@ -18,7 +18,7 @@ RUN npm install
 COPY . .
 
 ## Container ficará ouvindo os acessos na porta 3000
-EXPOSE 8080
+EXPOSE 3333
 
 ## Não se repete no Dockerfile
 ## Executa o comando npm start para iniciar o script que que está no package.json
