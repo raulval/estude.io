@@ -7,11 +7,19 @@ const authConfig = require("../config/auth.json");
 const router = express.Router();
 
 router.post("/cadastrar", async (req, res) => {
-  const { email } = req.body;
+  const { email, nome, senha } = req.body;
 
   try {
     if (await User.findOne({ email })) {
       return res.status(400).send({ error: "Email já cadastrado" });
+    }
+
+    if (!email || !nome || !senha) {
+      return res.status(400).send({ error: "Dados em branco" });
+    }
+
+    if (!email.match(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.?([a-z]+)?$/i)) {
+      return res.status(400).send({ error: "Email inválido" });
     }
 
     const user = await User.create(req.body);
