@@ -33,6 +33,10 @@ router.post("/", async (req, res) => {
   try {
     const { titulo, descricao } = req.body;
 
+    if (!titulo || !descricao) {
+      return res.status(400).send({ error: "Preencha todos os campos" });
+    }
+
     const anotacao = await Anotacoes.create({
       titulo,
       descricao,
