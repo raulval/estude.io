@@ -33,7 +33,11 @@ router.post("/", async (req, res) => {
   try {
     const { titulo, descricao, materia, dataHoraEntrega } = req.body;
 
-    const tarefas = await Tarefas.create({
+    if (!titulo || !dataHoraEntrega) {
+      return res.status(400).send({ error: "Dados em branco" });
+    }
+
+    const tarefa = await Tarefas.create({
       titulo,
       descricao,
       materia,
@@ -41,9 +45,9 @@ router.post("/", async (req, res) => {
       usuario: req.userId,
     });
 
-    await tarefas.save();
+    await tarefa.save();
 
-    return res.send({ tarefas });
+    return res.send({ tarefa });
   } catch (err) {
     return res.status(400).send({ error: "Erro ao criar uma tarefa" });
   }
