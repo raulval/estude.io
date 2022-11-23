@@ -3,24 +3,22 @@ const User = require("../../models/user");
 const request = require("supertest");
 const app = require("../../app");
 const assert = require("assert");
+const { connectDB, dropDB, dropCollections } = require("../setupTestsDB");
 
 const req = request(app);
 
 describe("Cadastro do usuário", () => {
   beforeAll(async () => {
     try {
-      await mongoose.connect(String(process.env.MONGO_URI_TEST), {
-        useNewUrlParser: true,
-      });
-      console.log("Conectado ao banco de testes!");
-    } catch (err) {
-      console.error("Erro ao conectar no banco de testes", err);
+      await connectDB();
+    } catch (error) {
+      console.log("Erro ao conectar ao banco de teste");
     }
   });
 
   afterAll(async () => {
-    await User.deleteMany({});
-    await mongoose.disconnect();
+    await dropCollections();
+    await dropDB();
   });
 
   test("nao deve criar o usuário com email invalido", async () => {
