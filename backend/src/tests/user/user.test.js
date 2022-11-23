@@ -21,7 +21,6 @@ describe("Cadastro do usuário", () => {
   afterAll(async () => {
     await User.deleteMany({});
     await mongoose.disconnect();
-    await mongoose.connection.close();
   });
 
   test("nao deve criar o usuário com email invalido", async () => {
