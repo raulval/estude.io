@@ -13,7 +13,7 @@ O projeto foi desenvolvido usando as seguintes tecnologias:
 - [Axios](https://axios-http.com/)
 - [Redux](https://redux.js.org/)
 - [MongoDB](https://www.mongodb.com/)
-
+- [Jest](https://jestjs.io/)
 
 ## 🚀 Getting started
 
